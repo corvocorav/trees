@@ -1,0 +1,6 @@
+if converted time smaller than 0 
+'
+convetred time = 24 + converted time 
+
+
+'

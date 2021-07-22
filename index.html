@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="main.js" defer></script>
+    <script src="description.js" defer></script>
+    <script src="cloud.js" defer> </script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="treeStyles.css">
+    <link rel="stylesheet" href="settingsStyles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Stylish&display=swap" rel="stylesheet">
+
+</head>
+
+<body  id="body" >
+
+  <div class="star"></div>
+
+
+
+  <div class="cloud" id="cl"></div>
+  <div class="cloudArea"></div>
+  <div class="blur"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="HIDEandINFO">
+    <button title="hide/show" class="hide" 
+    onclick="hideAll()" 
+    onmouseover="showComment()" 
+    onmouseout="hideComment();">
+
+    <p class="hideComment">'*' to hide/show everything</p>
+  
+  </button>
+
+
+    <button title="info" class="info" onclick="showInfo()" ></button>
+  </div>
+  
+
+
+        <div class="searchCard">
+
+          <div class="search" > 
+            <input type="text" class="searchBar">
+            <button class="searchButton" onclick="weather.search()"> add </button>
+        </div>
+
+        </div>
+
+        <div class="card">
+
+            <div class="weather"> 
+              <div class="topBar">
+                <img class="locIcon" src="location-pin.png" alt="">
+                <div class="city"> Tokyo</div>  
+              </div>
+
+              <div class="temp"> °C </div>
+              <div class="description"></div>
+              <div class="wind">  km/h</div>
+
+            </div>    
+        </div>
+           
+       <!--<button onclick="rise()"> rise </button>  
+        <button onclick="set()"> set </button> --> 
+       
+
+    <div class="infoCard" style="display: none;">
+
+      so this is a project i made been a couple weeks ! <br> you enter your city or any city from around the world to get its weather data, whats important is the wind speed and clouds for now at least, 
+        sky's color will change depending on time of day, theres even a sunset and sunrise if you keep the page open for long enough, wind speed and cloud data are used for the pages trees and clouds to simulate a real life scene <br>
+        you can customize it as you like from the settings tabs 
+
+
+
+    </div>      
+ 
+    <canvas id="starfield" width="750" height="500"></canvas>
+
+
+
+
+
+
+
+
+<!--now tree stufffffffffffffffffffffffffffffffffffffffffffffffffffffffff-->
+
+
+    <div class="fog"></div>
+
+  <img class="mountain" src="mountain.png" alt="">
+
+  <div class="fog"></div>
+
+  <div class="spawnLocation" id="loc_1"> </div>
+  <div class="spawnLocation" id="loc_2">  </div>
+  <div class="spawnLocation" id="loc_3">  </div>
+  <div class="spawnLocation" id="loc_Extra">  </div>
+
+       
+ 
+   <div id="_1" class="spawnArea_1"> </div>
+   <div id="_2" class="spawnArea_1"> </div>
+   <div id="_3" class="spawnArea_1"> </div>
+
+   <div id="_4" class="spawnArea_2"> </div>
+   <div id="_5" class="spawnArea_2"> </div>
+   <div id="_6" class="spawnArea_2"> </div>
+   <div id="_7" class="spawnArea_2"> </div>
+   <div id="_8" class="spawnArea_2"> </div>
+   <div id="_9" class="spawnArea_2"> </div>
+   <div id="_10" class="spawnArea_2"> </div>
+
+   <div id="_11" class="spawnArea_2"> </div>
+   <div id="_12" class="spawnArea_2"> </div>
+   <div id="_13" class="spawnArea_2"> </div>
+   <div id="_14" class="spawnArea_2"> </div>
+   <div id="_15" class="spawnArea_2"> </div>
+   <div id="_16" class="spawnArea_2"> </div>
+
+
+   <div id="_8_2" class="spawnArea_2"> </div>
+
+   <!--here were the settings tab goes -->
+
+        
+       <div class="menuCard">
+
+          <div id="treesMenu" class="menuItem">Trees
+            <div id="treesSubmenu"  class="submenuItem">
+
+              <div class="submenuOption" id="randomizeTrees">
+                <ul>randomize trees</ul>
+                <button id="randomizeTreesButton" onclick="randomizeTrees()"></button>
+              </div>
+
+              <div class="submenuOption"  id="colorizeTrees">
+                <ul>colorize trees</ul>
+                <input id="colorizeInput" class="textInput" placeholder="#hex or rgb(,,)" onchange="colorizeTrees()" oninput="colorizeTrees()"   type="text">
+              </div>
+
+              <div class="submenuOption" id="animateTrees">
+                <ul>animate trees</ul>
+                <input checked class="boxInput" id="animateTreesInput"  onchange="animateTrees_()" type="checkbox">
+              </div>
+                        
+              <hr id="hr1">
+              <hr id="hr2">
+
+             </div> 
+          </div>
+
+
+
+          
+          
+          <div id="cloudsMenu" class="menuItem">Clouds
+            <div id="cloudsSubmenu"  class="submenuItem">
+
+     
+              <div class="submenuOption" id="enableClouds">
+                <ul>enable clouds</ul>
+                <input checked class="boxInput" onclick="enableClouds()" id="enableCloudsInput" type="checkbox" value="checked">
+              </div>
+              
+          
+
+            </div>
+          </div>
+
+
+          <div id="mountainsMenu" class="menuItem">Mountains
+            <div id="mountainsSubmenu"  class="submenuItem">
+              <div class="submenuOption" id="enableMountains">
+                <ul>enable mountains</ul></ul>
+                <input checked class="boxInput" onclick="enableMountains()" id="enableMountainsInput" type="checkbox" value="checked">
+              </div>
+            </div>
+          </div>
+
+
+          <div id="daynightMenu" class="menuItem" >Day/Night
+            
+          </div>
+
+          <div id="extraMenu" class="menuItem">Extra
+            
+          </div>
+       </div>
+
+       
+
+
+
+
+   <script src="allSettings.js"></script>
+   <script src="Treescript.js"></script>
+
+  </body>
+</html>

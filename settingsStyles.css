@@ -1,0 +1,228 @@
+*
+{
+    white-space: nowrap;
+}
+.menuCard 
+{
+    width: 10px;
+    height: 28hhh0px;
+    position: absolute;
+    top: 110px;
+    left: 300px;
+    background-color: rgb(23, 160, 172);
+    border-radius: 20px;
+    
+}
+.menuItem
+{
+    font-size: 25px;
+    margin-top: 13px;
+    background-color:hsl(0, 0%, 90%);
+    color :cadetblue;
+    width : 120px;
+    padding-left: 15px;
+    border-radius : 0 10px 10px 0;
+    border-bottom: 2px solid hsl(0 , 0%, 70%);
+
+}
+.submenuItem
+{
+    width: 270px;
+    position: absolute;
+    left: 140px;
+    top: 15px;
+    padding-top: 18px;
+    padding-right: 10px;
+    padding-left: 35px;
+    background-color:  rgb(255, 255, 255);
+    border-radius : 0 8px 8px 8px;
+
+    /*display: none;*/
+     
+}
+
+.submenuOption
+{
+    padding-right: 120px;
+}
+
+ul
+{
+    font-size: 18px;
+    padding: 0;
+    margin: 0;
+    float: left;
+    padding-bottom: 15px;
+
+}
+button
+{
+    position: relative;
+    width: 25px;
+    height : 25px;
+}
+
+
+.boxInput
+{   
+    position: relative;
+    width: 20px;
+    height : 20px;
+}
+.textInput
+{
+    position: relative;
+    width : 100px;
+    left: 26px;
+
+}
+
+.menuItem:hover
+{
+    background-color: hsl(0, 0%, 100%);
+    padding-right: 14px;
+}
+/* ---- tree options styling ----*/
+#treesSubmenu
+{
+    display: none;
+    top: 13px;
+    height: 110px;
+}
+
+#treesMenu:hover  #treesSubmenu
+{
+    display: block;
+}
+#randomizeTrees
+{
+    padding-right: 170px;
+}
+
+#colorizeTrees
+{
+    position: relative;
+    top: -4px;
+    left: -114px;
+    padding : 0;
+}
+#animateTrees
+{
+    position: relative;
+    top: -15px;
+    width: 10px;
+    padding: 0;
+}
+#randomizeTreesButton
+{  
+    position: relative;
+    top: 0px;
+    padding: 0;
+    margin: 0;
+    
+    left: 120px;
+}
+#animateTreesInput
+{
+    width: 20px;
+    height: 20px;
+    left: 25px;
+    top: 22px;
+
+}
+#colorizeInput
+{
+    position: relative;
+    left: 55px;
+    top: 0px;
+}
+#populateInput
+{
+    position: relative;
+    left: 50px;
+    top: 8px;
+}
+/* ---- cloud options styling ----*/
+#enableClouds
+{
+    position: relative;
+    left: -30px;
+    top:  -5px;
+
+}
+
+#animateClouds
+{
+    position: relative;
+    left: 0px;
+
+}
+#randomizeCloudsButton
+{  
+    top: -12px;
+    left: 108px;
+}
+
+
+#enableClouds
+{
+    left: 0;
+    padding-top: 1px;
+}
+#enableCloudsInput
+{
+    left: 135px;
+    top : 0px;
+}
+
+
+#cloudsMenu:hover  #cloudsSubmenu
+{
+    display: block;
+}
+#cloudsSubmenu
+{
+    top: 62px;
+    display : none;
+    height : 40px;
+}
+
+/* mountains menu*/
+#mountainsMenu:hover #mountainsSubmenu
+{
+    display: block;
+}
+#enableMountains
+{
+    position: relative;
+    left: 0;
+    top: -5px;
+}
+#mountainsSubmenu
+{
+    top: 112px;
+    display : none;
+    height : 40px;
+}
+#enableMountainsInput
+{
+    left: 105px;
+    top : 0px;
+}
+
+/* some extra settings stuff */
+#daynightMenu {cursor: not-allowed;}
+#extraMenu    {cursor: not-allowed;}
+/*<-- global--->*/
+
+hr
+{   
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    left: 0;
+    width: 293px;
+    color: rgba(128, 128, 128, 0.267);
+}
+#hr1{top: 48px;}
+#hr2{top: 84px;}

@@ -1,10 +1,10 @@
 .cloudArea
 {
-    position: absolute;
-    /*background-color:rgb(131, 255, 255);*/
+    position: relative;
+    background-color:rgb(131, 255, 255);
     margin: 0;
-    height: 500px;
-    width: 2000px;
+    height: 200px;
+    width: 800px;
 }
 .cloud
 {
@@ -23,15 +23,6 @@
     transition-delay: 1s;*/
     transition: transform 1s linear;
 }
-.mountain
-{
-    width : 600px;
-    position: absolute;
-    bottom: 30px;
-    left: 900px;
-    filter: brightness(88%);
-}
-
 
 
 
@@ -46,7 +37,7 @@
     height: 0;
     border-left: 30px solid transparent;
     border-right: 30px solid transparent;
-    border-bottom: 100px solid rgb(96, 145, 47);
+    border-bottom: 100px solid #60912f;
     bottom: 0;
     left: 3%;
     transition: transform 1s linear;
@@ -61,197 +52,34 @@
 .spawnLocation
 {
     position: absolute;
-    background-color:rgb(148, 156, 77);
+    /*background-color:rgb(148, 156, 77);*/
+
   
-}
-
-#loc_1
-{
-      
     width: 500px;
-    height: 300px;
-    border-radius: 50%;
-
-    bottom:  -250px; 
-    left : 10px;
+    height: 70px;
+    bottom: 0px;
+    background-image: url("/ground.png");
+    filter: hue-rotate(202deg);
+    
 }
 
-#loc_2
-{
 
-    width: 620px;
-    height: 500px;
-    border-radius: 40%;
-
-    bottom:  -350px;
-    left : 400px;
-}
-
-#loc_3
-{
-      
-    width: 970px;
-    height: 200px;
-    border-radius: 50%;
-
-    bottom:  -110px;
-    left: 950px;
-} 
-
-#loc_Extra
-{
-      
- /*   width: 160px;
-    height: 80px;
-    border-radius: 45%;
-
-    bottom:  -50px;
-    left: 1800px;*/
-} 
-
-.spawnArea_1
-{
-    position : absolute;
-    width: 100px;
-    height: 30px;/*
-   background-color: rgba(255, 127, 80, 0.568);*/
-}
 
 #_1
 {
-    bottom: -25px;
-    left : 70px;
-} 
-
-#_2
-{
-    width : 30px;
-    bottom: 0px;
-    left : 150px;
-} 
-
-#_3
-{
-    bottom: 15px;
-    left : 200px;
-}
-
-#_4
-{
-    width : 30px;
-    bottom: 0px;
-    left : 300px;
-} 
-
-#_5
-{
-    width : 100px;
-    bottom: -25px;
-    left : 340px;
-}
-
-.spawnArea_2
-{
+    width: 500px;
     position : absolute;
-    width: 250px;
-    height: 30px;/*
-    background-color: rgba(37, 88, 88, 0.795);*/
-}
+    height: 30px;
+    background-color:/* rgba(255, 127, 80, 0.568)*/ transparent;
+    text-align: center;
+    bottom: 25px;
+} 
 
-#_6
+#scene
 {
-    width : 50px;
-    bottom: 50px;
-    left : 450px;
+    position: absolute;
+    background-color: rgb(143, 231, 253);
+    width: 500px;
+    height: 500px;
+    left: 100px;
 }
-#_7
-{
-    width : 50px;
-    bottom: 80px;
-    left : 500px;
-}
-#_8
-{
-    height : 70px;
-    bottom: 90px;
-    left : 570px;
-}
-
-#_8_2
-{
-    height : 70px;
-    bottom: -30px;
-    left : 520px;
-    width : 330px;
-}
-
-#_9
-{
-    width : 50px;
-    bottom: 60px;
-    left : 810px;
-}
-
-
-#_10
-{
-    width : 50px;
-    bottom: 60px;
-    left : 865px;
-}
-#_11
-{
-    width : 50px;
-    bottom: 30px;
-    left : 915px;
-}
-#_12
-{
-    width : 50px;
-    bottom: 0px;
-    left : 965px;
-}
-#_13
-{
-    height : 50px;
-    width : 80px;
-    bottom: 5px;
-    left : 1050px;
-}
-#_14
-{
-    height : 80px;
-    width : 500px;
-    bottom: 20px;
-    left : 1200px;
-}
-#_15
-{
-    height : 30px;
-    width : 100px;
-    bottom: 0px;
-    left : 1700px;
-}
-
-#_16
-{
-    height : 30px;
-    width : 60px;
-    bottom: -10px;
-    left : 1805px;
-}
-
-
-
-/*
-.fog
-{
-    width : 2000px;
-    height : 200px;
-    left: -100px;
-    position : absolute;
-    bottom: 0px;
-    background-color:rgba(94, 70, 46, 0.247);
-    filter: blur(900px);
-}
-*/

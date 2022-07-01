@@ -17,13 +17,18 @@
 </head>
 
 <body  id="body" >
-
+  <div class="darkness"></div>
   <div class="star"></div>
 
 
 
-  <div class="cloud" id="cl"></div>
-  <div class="cloudArea"></div>
+ 
+   <!--
+   <div class="cloudArea"></div>
+
+   --> 
+
+
   <div class="blur"></div>
 
 
@@ -65,7 +70,7 @@
         <div class="searchCard">
 
           <div class="search" > 
-            <input type="text" class="searchBar">
+            <input type="text" class="searchBar" value="islamabad">
             <button class="searchButton" onclick="weather.search()"> add </button>
         </div>
 
@@ -114,38 +119,12 @@
 
     <div class="fog"></div>
 
-  <img class="mountain" src="mountain.png" alt="">
+  <div id="scene">
+    <div class="spawnLocation" id="loc_1"> </div>
+    <div id="_1" class="spawnArea_1"></div>
 
-  <div class="fog"></div>
+  </div>
 
-  <div class="spawnLocation" id="loc_1"> </div>
-  <div class="spawnLocation" id="loc_2">  </div>
-  <div class="spawnLocation" id="loc_3">  </div>
-  <div class="spawnLocation" id="loc_Extra">  </div>
-
-       
- 
-   <div id="_1" class="spawnArea_1"> </div>
-   <div id="_2" class="spawnArea_1"> </div>
-   <div id="_3" class="spawnArea_1"> </div>
-
-   <div id="_4" class="spawnArea_2"> </div>
-   <div id="_5" class="spawnArea_2"> </div>
-   <div id="_6" class="spawnArea_2"> </div>
-   <div id="_7" class="spawnArea_2"> </div>
-   <div id="_8" class="spawnArea_2"> </div>
-   <div id="_9" class="spawnArea_2"> </div>
-   <div id="_10" class="spawnArea_2"> </div>
-
-   <div id="_11" class="spawnArea_2"> </div>
-   <div id="_12" class="spawnArea_2"> </div>
-   <div id="_13" class="spawnArea_2"> </div>
-   <div id="_14" class="spawnArea_2"> </div>
-   <div id="_15" class="spawnArea_2"> </div>
-   <div id="_16" class="spawnArea_2"> </div>
-
-
-   <div id="_8_2" class="spawnArea_2"> </div>
 
    <!--here were the settings tab goes -->
 
@@ -162,7 +141,7 @@
 
               <div class="submenuOption"  id="colorizeTrees">
                 <ul>colorize trees</ul>
-                <input id="colorizeInput" class="textInput" placeholder="#hex or rgb(,,)" onchange="colorizeTrees()" oninput="colorizeTrees()"   type="text">
+                <input  value="#60912f" type="color" id="colorizeInput" class="textInput"  onchange="colorizeTrees()" oninput="colorizeTrees()"   type="text">
               </div>
 
               <div class="submenuOption" id="animateTrees">
@@ -195,14 +174,7 @@
           </div>
 
 
-          <div id="mountainsMenu" class="menuItem">Mountains
-            <div id="mountainsSubmenu"  class="submenuItem">
-              <div class="submenuOption" id="enableMountains">
-                <ul>enable mountains</ul></ul>
-                <input checked class="boxInput" onclick="enableMountains()" id="enableMountainsInput" type="checkbox" value="checked">
-              </div>
-            </div>
-          </div>
+        
 
 
           <div id="daynightMenu" class="menuItem" >Day/Night

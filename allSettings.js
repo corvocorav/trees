@@ -1,5 +1,5 @@
 // TREES SETTINGS
-let numOfTrees = 150;
+let numOfTrees = 10;
 let trees = [];
 
 setTimeout(() => {plant(numOfTrees); }, 100);
@@ -149,22 +149,4 @@ function animateTrees(windSpeed)
     }     
   }  
    
-}
-
-let mountainEnabled = true;
-function enableMountains() 
-{
-
- 
-  if (mountainEnabled == false) 
-  {
-    mountainEnabled = true;
-    document.querySelector(".mountain").style.display = 'block';
-  }
-  else
-  {
-    mountainEnabled = false;
-    document.querySelector(".mountain").style.display = 'none';
-  }
-
 }

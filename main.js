@@ -1,5 +1,6 @@
 setTimeout(() => {
     weather.search();
+   
 }, 200);
 
 
@@ -40,7 +41,6 @@ let weather =
         const { sunrise , sunset} = data.sys;
         const { id } = data.weather[0];
         const { all } = data.clouds;
-
         window.ID = id;
         window.Description = description;
         window.Name = name;
@@ -54,12 +54,28 @@ let weather =
         (
             "city name : " + name 
             +" temp : " + temp  , description  
-            + " windspeed : " + speed * 3.6  
-            + " current hour is  : " 
-            + currentHour
-            + "  converted hours :" + window.currentHourConverted            
-        );
+            + " windspeed : " + speed * 3.6   + " clouds : " + all
+            ,
+            "timzone :" + timezone
             
+        );
+
+      //sooo this shi fixes date stuff
+      d = new Date()
+     
+      localTime = d.getTime()
+      localOffset = d.getTimezoneOffset() * 60000
+      utc = localTime + localOffset
+      var cityTimezone = utc + (1000 * timezone)
+      nd = new Date(cityTimezone)
+      hour = nd.getHours()
+      console.log("***** hour :" + hour);
+      brightnessIndex = hour - 12
+      //if brightnessindex is negative, make it positive
+      if (brightnessIndex < 0) brightnessIndex = brightnessIndex*-1
+      console.log("brightnessIndex :" + brightnessIndex);
+
+
         //display stuff inside the html
         
         htmlElements.HTMLcity.innerText        = name;
@@ -73,19 +89,20 @@ let weather =
     {
         selectedCity = document.querySelector(".searchBar").value; 
         update(); 
-        deleteClouds();
+       /* deleteClouds();*/
 
         //console.clear();
         setTimeout(() => {
             animateTrees_();
 
-            setSky();
             console.log("seacheingg");
         
         }, 1000);  
 
         
-
+        setTimeout(() => {
+            setbrightness() ;
+        }, 100);
     }
 
 }
@@ -94,14 +111,13 @@ let weather =
 const interval = setInterval(function() 
 {
     update();
-}, 3000);
+}, 30000);
 
 function update() 
 {
     weather.fetchWeather(selectedCity);
-    RiseSet();
    
-    ConvertTime();
+
   //  console.log(cloudBrightness);
 }
 
@@ -110,7 +126,7 @@ function update()
 setInterval( function()
 {
     console.clear();    
-}, 5000);
+}, 50000);
 
 
 /*
@@ -123,117 +139,23 @@ setInterval( function()
 (•ㅅ•) ||
 / 　 づ*/
 
-function ConvertTime()
+
+
+
+function setbrightness() 
 {
-    currentHour = new Date().getHours() + (new Date().getMinutes() / 60);                                   //get hours of the pc
-    window.currentHourConverted = currentHour + (window.timezoneInHours - 1) + (new Date().getMinutes() / 60) ;    // calculate converted hours by getting current hours and adding the timezone diffrence 
-    if (currentHourConverted >= 24)    {currentHourConverted -= 24;}
-    else if (currentHourConverted < 0) {currentHourConverted += 24;}
-    console.log("converted tiem " + window.currentHourConverted);
-
- 
-}
-
-let sunrise = 5;
-let sunset = 18;
-let currentHour;
-let toFullRise_Set;
-let sky = document.getElementById("body");
-
-function setSky() 
-{   
-    console.log(cloudBrightness);
-    ConvertTime();
-    console.log("set sky fucntion is called");
-
-    if 
-    (5< currentHour && currentHour <= 8 || 18 < currentHour && currentHour <= 21) 
-    {         
-        darkenClouds(70);
-        darkenTreesAndLnad(70)
-        console.log(cloudBrightness);
-
-        sky.classList.add('notransition'); // Disable transitions
-        sky.style.backgroundColor = "#5486BD"; // dusk
-
-        sky.offsetHeight; // Trigger a reflow, flushing the CSS changes
-        sky.classList.remove('notransition'); // Re-enable transitions
-        canvas.style.display = 'block';
-        star.style.display = "none";
-        console.log("dusk");
-
-
-    }
-
-    else if ( 8 < currentHour  && currentHour <= 18) 
-    {   
-
-    darkenClouds(100);
-    darkenTreesAndLnad(100);
-    console.log(cloudBrightness );
-
-     sky.classList.add('notransition'); // Disable transitions
-     sky.style.backgroundColor = "#97D3FF"; // mid day
-
-    sky.offsetHeight; // Trigger a reflow, flushing the CSS changes
-    sky.classList.remove('notransition'); // Re-enable transitions
-    canvas.style.display = 'none';
-    star.style.display = 'none';
-        console.log("midday");
-
-    }       
-
-    else if
-    ( currentHour > 21 || currentHour < 5) 
-    {
-        darkenClouds(20);
-        darkenTreesAndLnad(40);
-        console.log(cloudBrightness );
+    // add style to css instead of js
+    let darkness = document.querySelector(".darkness");
+    darkness.style.width = "500px";
+    darkness.style.height = "500px";
+    darkness.style.position = "absolute";
+  //  darkness.style.top = "500px";
+  //  darkness.style.left = "180px";
+    darkness.style.backgroundColor =  "rgba(0,0,0," + brightnessIndex / 10;
+    //give darkness big zindex value
+    darkness.style.zIndex = "100";
+    document.getElementById("scene").appendChild(darkness);
     
-    sky.classList.add('notransition'); // Disable transitions
-    sky.style.backgroundColor = "#0F1017"; // night 
-
-    sky.offsetHeight; // Trigger a reflow, flushing the CSS changes
-    sky.classList.remove('notransition'); // Re-enable transitions
-    canvas.style.display = 'block';
-    star.style.display = "block";
-        console.log("night");
-
-
-    }
-    
-
-}
-
-function RiseSet() 
-{
-    if (currentHour >= 5 && currentHour <= 8 ) 
-    {
-      rise()  
-    }
-    else if (currentHour >= sunset  && currentHour <= 21 )  
-    {
-      set();
-    }
-}
-
-function rise() 
-{
-    darkenClouds(100);
-    darkenTreesAndLnad(100);
-    console.log("rise");
-    sky.style.transition = String( 8 - currentHour ) * 3600 + "s";
-    sky.style.backgroundColor = "#97D3FF";
-    canvas.style.display = 'none';
-}
-function set()
-{
-    darkenClouds(50);
-    darkenTreesAndLnad(50);
-    sky.style.transition = String( 21 - currentHour ) * 3600 + "s";
-    sky.style.backgroundColor = "#0F1017";
-    console.log("set");    
-    canvas.style.display = 'block';
 }
 
 /*
@@ -346,47 +268,4 @@ document.querySelector("body").addEventListener("keyup" , function (event)
         }
     }  
 })
-
-
-// now stars and stuff
-
-var canvas = document.getElementById("starfield"),
-context = canvas.getContext("2d");
-stars = 200;
-
-for (var i = 0; i < stars; i++) {
-    
-    x = Math.random() * canvas.offsetWidth;
-    y = Math.random() * canvas.offsetHeight;
-    context.fillStyle = "white";
-    context.fillRect(x,y,1,1);
-    
-}
-
-function twink()
-{
-    console.log("twink called");
-    let star = document.querySelector(".star");
-
-    let winWidth = window.innerWidth;
-    let winHeight = window.innerHeight;
-    randomX = Math.floor(Math.random()  * winWidth);
-    randomY = Math.floor(Math.random()  * winHeight);
-    star.style.top = randomY + "px";
-    star.style.left = randomX + "px";
-   
-    star.style.backgroundColor = "white";
-    star.style.filter = "blur(1px)";
-    setTimeout(() => {
-        star.style.backgroundColor = "transparent";
-        star.style.filter = "blur(10px)";
-
-
-    }, 2000);
-}
-
-setInterval(() => {
-    twink();
-}, 30000);
-
 

@@ -78,7 +78,7 @@ let weather =
 
         //display stuff inside the html
         
-        htmlElements.HTMLcity.innerText        = name;
+    //    htmlElements.HTMLcity.innerText        = name;
         htmlElements.HTMLtemp.innerText        = temp + " °C";
         htmlElements.HTMLdescription.innerText = description;
         htmlElements.HTMLwind.innerText        = "wind : " + Math.round(speed * 3.6) + " km/h";
@@ -146,17 +146,19 @@ function setbrightness()
 {
     // add style to css instead of js
     let darkness = document.querySelector(".darkness");
-    darkness.style.width = "500px";
-    darkness.style.height = "500px";
+    document.getElementById("view").appendChild(darkness);
+    
+    darkness.style.width = "200%";
+    darkness.style.height = "200%";
     darkness.style.position = "absolute";
-  //  darkness.style.top = "500px";
-  //  darkness.style.left = "180px";
+    
+
     darkness.style.backgroundColor =  "rgba(0,0,0," + brightnessIndex / 10;
     //give darkness big zindex value
-    darkness.style.zIndex = "100";
-    document.getElementById("scene").appendChild(darkness);
+    darkness.style.zIndex = "2";
     
 }
+
 
 /*
 |￣￣￣￣￣￣￣￣|
@@ -236,7 +238,7 @@ document.querySelector("body").addEventListener("keyup" , function (event)
     if (event.key == "*") 
     {
     
-        if (    document.querySelector(".card").style.display == "none") 
+        if (    document.querySelector(".wrapper").style.display == "none") 
         {
             isHidden = true
         }
@@ -247,23 +249,26 @@ document.querySelector("body").addEventListener("keyup" , function (event)
     
         if (isHidden == true) 
         {
-            document.querySelector(".card").style.display = "block";
-            document.querySelector(".searchCard").style.display = "block";
-            document.querySelector(".hideComment").style.display = "block";
-            document.querySelector(".HIDEandINFO").style.display = "block";
-            document.querySelector(".menuCard").style.display = "block";
+            document.querySelector(".wrapper").style.display = "flex"
+         //  document.querySelector(".card").style.display = "block";
+         //  document.querySelector(".searchCard").style.display = "block";
+         //  document.querySelector(".hideComment").style.display = "block";
+         //  document.querySelector(".HIDEandINFO").style.display = "block";
+         //  document.querySelector(".menuCard").style.display = "block";
 
 
 
         }
         else
         {
-            document.querySelector(".card").style.display = "none";
-            document.querySelector(".searchCard").style.display = "none";
-            document.querySelector(".hideComment").style.display = "none";
-            document.querySelector(".infoCard").style.display = "none";
-            document.querySelector(".HIDEandINFO").style.display = "none";
-            document.querySelector(".menuCard").style.display = "none";
+            document.querySelector(".wrapper").style.display = "none"
+
+         //   document.querySelector(".card").style.display = "none";
+         //   document.querySelector(".searchCard").style.display = "none";
+         //   document.querySelector(".hideComment").style.display = "none";
+         //   document.querySelector(".infoCard").style.display = "none";
+         //   document.querySelector(".HIDEandINFO").style.display = "none";
+         //   document.querySelector(".menuCard").style.display = "none";
 
         }
     }  

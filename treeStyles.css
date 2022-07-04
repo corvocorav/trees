@@ -1,11 +1,4 @@
-.cloudArea
-{
-    position: relative;
-    background-color:rgb(131, 255, 255);
-    margin: 0;
-    height: 200px;
-    width: 800px;
-}
+
 .cloud
 {
     position : absolute;
@@ -22,6 +15,7 @@
     transition-timing-function: ease-in-out;
     transition-delay: 1s;*/
     transition: transform 1s linear;
+    z-index: 0;
 }
 
 
@@ -51,14 +45,15 @@
 
 .spawnLocation
 {
-    position: absolute;
-    /*background-color:rgb(148, 156, 77);*/
-
+    position: relative;
+   /* background-color:rgb(148, 156, 77);
+*/
   
-    width: 500px;
-    height: 70px;
-    bottom: 0px;
-    background-image: url("/ground.png");
+    width: 100%;
+    background-size: 100%;
+    height: 10%;
+    bottom: -90%;
+    background-image: url("ground.png");
     filter: hue-rotate(202deg);
     
 }
@@ -67,19 +62,68 @@
 
 #_1
 {
-    width: 500px;
-    position : absolute;
-    height: 30px;
+    width: 100%;
+    position: relative;
+    height: 8%;
     background-color:/* rgba(255, 127, 80, 0.568)*/ transparent;
     text-align: center;
-    bottom: 25px;
+    bottom: -82%;
 } 
 
+#view
+{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    background-color: darkcyan;
+    height: 500px;
+    width: 100%;
+}
+
+#withBorders
+{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background-color: #60912f;
+}
 #scene
 {
-    position: absolute;
+    /*position: relative;*/
     background-color: rgb(143, 231, 253);
     width: 500px;
-    height: 500px;
-    left: 100px;
+    height: 500px;  
+  
+
+}
+
+#left_Border , #right_Border
+{
+    width: 20%;
+    height: 100%;
+    background-color: darkcyan;
+}
+#top_Border , #bottom_Border
+{
+    width: 100%;
+    height: 20px;
+    background-color: darkcyan;
+    z-index: 10;
+}
+
+
+/*
+#left_Border
+{
+    width: 10px;
+    height: 100%;
+    background-color: red;
+}
+*/
+
+html
+{
+    text-align: center;
 }

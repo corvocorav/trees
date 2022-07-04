@@ -35,7 +35,7 @@ function clouds()
             cloud.style.zIndex = "1000"
             
             let leftPos = Math.floor(Math.random() * 100) + 105;
-            let topPos = Math.floor(Math.random() * 30); 
+            let topPos = Math.floor(Math.random() * 20); 
         
             let cloudWidth = Math.floor(Math.random() * 100) + 20;
             let cloudHeight = Math.floor(Math.random() * 25) + 5;

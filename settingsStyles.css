@@ -5,21 +5,21 @@
 
 .menuCard
 {
-  margin-left: 20%;
-  background-color: transparent*;
+  margin-left: 10%;
+  background-color: rgb(29, 54, 75);
   display: flex;
 
 }
 .menuItem
 {
-  background-color: transparent;
-  margin: 2px;
+  background-color:  rgb(29, 54, 75);
+  margin: 2px 30px;
   font-size: 25px;
   text-align: left;
 }
 .submenuOption
 {
-  background-color: transparent;
+  background-color:  rgb(29, 54, 75);
   display: flex;
   justify-content: space-between;
   font-size: 20px;
@@ -45,6 +45,8 @@ ul
 .boxInput
 {
   top: -9px;
+  filter: contrast(3);
+  filter: grayscale(50%);  
 }
 
 /*--------*/
@@ -53,30 +55,77 @@ ul
 {
   background-color: transparent;
   outline: 0;
-  border: solid black;
+  border: solid rgb(202, 202, 202);
   border-radius: 10%;
-  margin: 10px;
+  margin: 3px  20px;
   font-size: 20px;
 }
+
 .searchBar
 {
   background-color: transparent;
 
-  width: 150px;
-  height: 30px;
-  margin: 10px;
+  /*width: 150px;*/
+  height: 20px;
+  margin: 0px 0px 0px 10px;
   border : rgb(5, 5,5 ,0.8) solid 1px;
+  border: 0;
   font-size: 20px;
-  text-align: center;
+  text-align: left;
+  padding: 0;
+  position: relative;
+  top: -3px;
 }
 
 .searchButton
 {
-  width: 5px;
-  height: 10px;
+  width: 22px;
+  height: 22px;
+  padding: 0;
   position: relative;
-  left: -10px;
+  top: -3px;
+  border: 0 ;
+  outline: 0;
+  background-color: transparent;
+  font-size: 22px;
+  font-weight: bolder;
+  line-height: 16px;
+  text-align: center;
+  display: inline-block;
+  padding-right: 10px;
+  cursor: pointer;
+ 
 }
+body
+{
+  padding-top: 15px;
+  background-color:  rgb(29, 54, 75);
+}
+.search
+{
+
+  display: flex;
+  align-items: center;
+}
+.numOfTrees
+{
+  width: 30px;
+  height: 15px;
+  font-size: 15px;
+  margin-left: 8px;
+  border: 0;
+  outline: 0;
+  background-color: transparent;
+  font-weight: bold;
+}
+
+
+
+
+
+
+
+
 
 #data{
   text-align: left; font-size: 22px;

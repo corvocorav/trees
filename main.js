@@ -1,6 +1,7 @@
 setTimeout(() => {
     weather.search();
-   
+    styleFix()
+
 }, 200);
 
 
@@ -187,12 +188,14 @@ function hideAll()
     {
         document.querySelector(".card").style.display = "block"
         document.querySelector(".searchCard").style.display = "block"
+        document.querySelector(".menuCard").style.display = "flex"
 
     }
     else
     {
         document.querySelector(".card").style.display = "none"
         document.querySelector(".searchCard").style.display = "none"
+        document.querySelector(".menuCard").style.display = "none"
 
     }
 }

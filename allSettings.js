@@ -1,5 +1,5 @@
 // TREES SETTINGS
-let numOfTrees = 10;
+let numOfTrees = parseInt(document.getElementsByClassName("numOfTrees")[0].value);
 let trees = [];
 
 setTimeout(() => {plant(numOfTrees); }, 100);
@@ -18,14 +18,14 @@ function randomizeTrees()
   let trees = document.querySelectorAll(".tree");
 
   
-    for (i = 0; i < numOfTrees ;i ++) 
+    for (i = 0; i < trees.length ;i ++) 
     {   
        trees[i].remove();
 
     }
 
     
-   plant(numOfTrees)
+   plant(document.getElementsByClassName("numOfTrees")[0].value);
         
         setTimeout(() =>{colorizeTrees();}, 100);
         
@@ -42,7 +42,7 @@ function colorizeTrees()
   console.log(trees);
      if (rgb != "") 
      {
-      for (i = 0; i < numOfTrees ;i ++) 
+      for (i = 0; i < trees.length ;i ++) 
       {  
         trees[i].style.borderBottom =
         trees[i].style.borderBottomWidth + " solid " + rgb;    
@@ -149,4 +149,14 @@ function animateTrees(windSpeed)
     }     
   }  
    
+}
+
+
+
+var cityInput = document.getElementsByClassName('searchBar')[0]; // get the input element
+cityInput.addEventListener('input', resizeInput); // bind the "resizeInput" callback on "input" event
+resizeInput.call(cityInput); // immediately call the function
+
+function resizeInput() {
+  this.style.width = this.value.length + "ch";
 }

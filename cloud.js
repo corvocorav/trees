@@ -107,7 +107,7 @@ let cloudsEnabled = true;
 function callClouds() {
     let interval = (window.windSpeed / 2) * 1000;
     console.log("interval: " + interval);
-
+    
 
     setTimeout(function () {
         clouds();

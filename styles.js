@@ -5,7 +5,7 @@ let topBorder = document.getElementById("topBorder").style
 let bottomBorder = document.getElementById("bottomBorder").style
 
 
-function b() {
+function styleFix() {
 
     //scene.width =  window.innerWidth / 2 + "px"
     //scene.height = window.innerWidth / 2 + "px"
@@ -27,6 +27,10 @@ function b() {
     )*/
     
 }
+
+  
+
+/*
 function d_() 
 {
   
@@ -61,7 +65,7 @@ function c()
   
 }
 
-
+*/
 setInterval(() => {
   //clear console
   console.clear();

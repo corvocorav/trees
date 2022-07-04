@@ -49,8 +49,9 @@
        <div class="searchCard">
    
          <div class="search" > 
+           <div id="data" class="city">city :</div>
            <input type="text" class="searchBar" value="ohio">
-           <button class="searchButton" onclick="weather.search()">  </button>
+           <button class="searchButton" onclick="weather.search()"> + </button>
        </div>
    
        <div class="card">
@@ -81,11 +82,12 @@
             <div class="submenuOption" id="randomizeTrees">
               <ul>randomize trees</ul>
               <button id="randomizeTreesButton" onclick="randomizeTrees()"></button>
+              <input type="text" class="numOfTrees" value="25">
             </div>
 
             <div class="submenuOption"  id="colorizeTrees">
               <ul>colorize trees</ul>
-              <input id="colorizeInput" class="textInput" placeholder="#hex or rgb(,,)" onchange="colorizeTrees()" oninput="colorizeTrees()"   type="color">
+              <input id="colorizeInput" value="#60912f" class="textInput" placeholder="#hex or rgb(,,)" onchange="colorizeTrees()" oninput="colorizeTrees()"   type="color">
             </div>
 
             <div class="submenuOption" id="animateTrees">
@@ -122,7 +124,6 @@
               <ul>enable mountains</ul></ul>
               <input checked class="boxInput" onclick="enableMountains()" id="enableMountainsInput" type="checkbox" value="checked">
             </div>
-            <button id="randomizeTreesButton" onclick="b()"></button>
 
           </div>
         </div>
